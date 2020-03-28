@@ -13,33 +13,23 @@ class Book {
         return `${this.title} was written by ${this.author} in ${this.year}`;
     }
 
-    getAge() {
-
-        const years = new Date().getFullYear() - this.year;
-        return `${book1.title} is ${years} years old`;
-    }
-
-
-    revise(newYear) {
-
-        this.year = newYear;
-        this.revised = true;
-    }
-    static topBookStore() {
-
-        return 'Easons';
-    }
 
 }
 
+// Magazine Subclass
 
+class Magazine extends Book {
 
-// Instantiate an Object
+    constructor(title, author, year, month) {
 
-const book1 = new Book('Book One', 'John Doe', '1934');
+        super(title, author, year);
+        this.month = month;
+    }
+}
 
-console.log(book1);
-book1.revise('2018');
-console.log(book1);
+// Instantiate Magazine
 
-console.log(Book.topBookStore());
+const mag1 = new Magazine('Mag One', ' \john Doe', '1243', 'Feb');
+
+console.log(mag1);
+console.log(mag1.getSummary());
